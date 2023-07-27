@@ -1,7 +1,10 @@
 
 body{
     background-color: lightgoldenrodyellow;
+    font-weight: bold;
 }
+
+/* styling for the header */
 header{
     display: flex;
     flex-direction: row;
@@ -43,12 +46,13 @@ figure{
 }
 
 .beach{
-    background-image: url(./assets/portfolio-image.png);
+    background-image: url(./portfolio-image.png);
     width: 100%;
     height: 200px;
     background-size: cover;
     background-position: center;
-    margin: 0 auto
+    margin: 0 auto;
+    z-index: 1;
     
 }
 .portrait{
@@ -62,54 +66,87 @@ figure{
     
 }
 .slogan{
-    /* background-color: lightgray; */
+    background-color: white;
     margin: 0px;
     opacity: .8;
     display: inline;
     position: relative;
     top: 20px;
     left: 60%;
-    font-weight: bold;
-    border-bottom: 4px solid white;
-}
-
-.cheatSheet{
-    background-image: url(./assets/cheatSheet.png);
-    background-size: cover;
-    background-position: center;
+    font-weight: 900;
+    padding: 5px 5px 5px 10px;
     
 }
+
+/* styling for the boxes in the grid */
+
 .contentCard{
     display: flex;
-}
-#cheatSheet{
-    height: 100%;
-    width: 100%;
-    background-color: aliceblue;
-    position:relative;
-    right: ;
-    
-    
-}
-
-.cheatSheet:{
-
-}
-
-.contentCard{
-    background-color: ;
     border: 4px solid lightblue;
+    position: relative;
 }
 
 .card{
     border-bottom: 4px solid lightsalmon;
 }
 
+/* salmon squares for work title */
+.cardTitle{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 70px;
+    width: 100px;
+    z-index: 1;
+    background-color: lightsalmon;
+    bottom: 0;
+}
+
+
+/* cheatSheet card styling */
+.cheatSheet{
+    background-image: url(./vecteezy_traditional-japanese-wave-pattern-vector-abstract-hand_18861519.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+#cheatSheet{
+    height: 100%;
+    width: 100%;
+    
+    z-index: 2;
+    
+    
+}
+
+/* data card styling */
+.data{
+    background-image: url(./beach-01.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+#data{
+    height: 100%;
+    width: 100%;
+    
+    z-index: 2;
+    
+    
+}
+/* pre-work card styling */
+.preWork{
+    background-image: url(./vecteezy_campaign-sketch-doodle-set-backdrop-drawing-pattern-texture_.jpg);
+}
+
+
+/* generic card styling */
 
 
 
-
-
+/* formate for the grid */
 
 .aboutMeTitle{
     grid-area: aboutMeTitle;
@@ -133,10 +170,7 @@ figure{
     grid-area: preWork;
   
 }
-.scaryData{
-    grid-area: scaryData;
-  
-}
+
 
 .gitHub{
     grid-area: gitHub;
@@ -155,13 +189,12 @@ figure{
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr .5fr;
     grid-template-areas: 
         "aboutMeTitle aboutMe aboutMe aboutMe"
         "work cheatSheet cheatSheet cheatSheet"
         "work cheatSheet cheatSheet cheatSheet"
         "work preWork data data"
-        "work preWork scaryData scaryData"
         "contactMe phone email gitHub";
         gap: 20px 20px; 
 }
