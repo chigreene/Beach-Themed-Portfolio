@@ -141,9 +141,13 @@ figure{
     background-image: url(./vecteezy_campaign-sketch-doodle-set-backdrop-drawing-pattern-texture_.jpg);
 }
 
-
-/* generic card styling */
-
+.aboutMeTitle, .work, .contactMe {
+    text-align: right;
+    border: none;
+    border-right: 4px solid lightsalmon;
+    padding-right: 5px; 
+}
+/* added some hover effects were an opaque film greys out work tiles till hovered over */
 
 
 /* formate for the grid */
@@ -189,7 +193,7 @@ figure{
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 2fr .5fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr .25fr;
     grid-template-areas: 
         "aboutMeTitle aboutMe aboutMe aboutMe"
         "work cheatSheet cheatSheet cheatSheet"
