@@ -93,6 +93,14 @@ figure {
 
 }
 
+.contentCard:hover {
+    .cardTitle {
+
+        height: 140px;
+    }
+}
+
+
 .card {
     border-bottom: 4px solid lightsalmon;
 }
@@ -107,6 +115,7 @@ figure {
     z-index: 1;
     background-color: lightsalmon;
     bottom: 0;
+    transition-duration: 500ms;
 }
 
 
@@ -247,16 +256,18 @@ figure {
 } */
 
 @media screen and (max-width: 768px) {
-    .max{
+    .max {
         width: 100%;
     }
-    body{
+
+    body {
         /* background-color: crimson; */
-        
+
     }
-    .container{
+
+    .container {
         display: grid;
-        grid-template-rows: .25fr 1fr .25fr 1fr 1fr 1fr .25fr .25fr;
+        grid-template-rows: .25fr 1fr .25fr 2fr 1fr 1fr .25fr .25fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
             "aboutMeTitle aboutMeTitle aboutMeTitle"
@@ -267,31 +278,50 @@ figure {
             "preWork preWork preWork"
             "contactMe contactMe contactMe"
             "phone email gitHub"
-            ;
-        .aboutMeTitle,
-        .work,
-        .contactMe {
-            text-align: left;
-            border: none;
-            border-bottom: 4px dashed lightsalmon;
-            padding-right: 5px;
-        }
-        
+        ;
+
+
+
+
     }
+
+    .aboutMeTitle,
+    .work,
+    .contactMe {
+        text-align: left;
+        border: none;
+        border-bottom: 4px dashed lightsalmon;
+        padding-right: 5px;
+    }
+
     .portrait {
         display: inline-block;
         margin: 0px;
         border-radius: 100%;
-    
+
         position: relative;
         top: 20px;
         left: 10%;
-    
+
     }
 
-    /* add transition */
-    .slogan{
-        left: 10%
+    h1 {
+        font-size: 32px;
+        display: block;
+    }
+
+    .slogan {
+        display: block;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        margin: 5px 0px 2px;
+
     }
 }
-
