@@ -1,5 +1,5 @@
 #max {
-    max-width: 1300px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -13,26 +13,34 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
     background-color: lightblue;
     align-items: end;
-    margin: 0px auto;
+    /* margin: 0px auto; */
     position: static;
+    
+
 }
 
 h1 {
     border-bottom: 4px solid lightsalmon;
+    font-size: 32px;
+    margin-bottom: 2px;
+    margin-left: 5px
+
 }
 
 ul {
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    
 
 }
 
 
 
 ul li {
-
+    
     list-style-type: none;
     margin-right: 10px;
     border-bottom: 2px solid lightsalmon;
@@ -47,6 +55,7 @@ figure {
 
 .plain {
     text-decoration: none;
+    color: black;
 }
 
 .beach {
@@ -90,15 +99,9 @@ figure {
     display: flex;
     border: 4px solid lightblue;
     position: relative;
-
+    transition: ease all .5s;
 }
 
-.contentCard:hover {
-    .cardTitle {
-
-        height: 140px;
-    }
-}
 
 
 .card {
@@ -115,7 +118,7 @@ figure {
     z-index: 1;
     background-color: lightsalmon;
     bottom: 0;
-    transition-duration: 500ms;
+    
 }
 
 
@@ -127,15 +130,6 @@ figure {
 
 }
 
-#cheatSheet {
-    height: 100%;
-    width: 100%;
-
-    z-index: 2;
-
-
-}
-
 /* data card styling */
 .data {
     background-image: url(./beach-01.jpg);
@@ -144,19 +138,16 @@ figure {
 
 }
 
-#data {
-    height: 100%;
-    width: 100%;
-
-    z-index: 2;
-
-
-}
-
 /* pre-work card styling */
 .preWork {
     background-image: url(./vecteezy_campaign-sketch-doodle-set-backdrop-drawing-pattern-texture_.jpg);
 }
+
+/* #label {
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+} */
 
 .aboutMeTitle,
 .work,
@@ -165,10 +156,21 @@ figure {
     border: none;
     border-right: 4px solid lightsalmon;
     padding-right: 5px;
+    font-size: 24px;
 }
 
-/* added some hover effects were an opaque film greys out work tiles till hovered over */
+/* animations - added some hover effects were an opaque film greys out work tiles till hovered over */
+.contentCard:hover {
+    .cardTitle {
+        transition-duration: 500ms;
+        height: 140px;
+    }
+}
 
+.contentCard:hover {
+    opacity: .7;
+    transition-duration: 1000ms;
+}
 
 /* formate for the grid */
 
@@ -178,7 +180,6 @@ figure {
 
 .aboutMe {
     grid-area: aboutMe;
-
 }
 
 .work {
@@ -187,17 +188,14 @@ figure {
 
 .cheatSheet {
     grid-area: cheatSheet;
-
 }
 
 .data {
     grid-area: data;
-
 }
 
 .preWork {
     grid-area: preWork;
-
 }
 
 
@@ -229,42 +227,12 @@ figure {
         "work preWork data data"
         "contactMe phone email gitHub";
     gap: 20px 20px;
+    
 }
 
-/* @media screen and (max-width: 800px) {
-    .cardTitle {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        position: absolute;
-        height: 70px;
-        width: 60px;
-        z-index: 1;
-        font-size: 8px;
-        background-color: lightsalmon;
-        bottom: 0;
-    }
-
-} */
-
-
-
-/* @media screen and (max-width: 992px) {
-    body{
-        background-color: lightgreen;
-    }
-} */
 
 @media screen and (max-width: 768px) {
-    .max {
-        width: 100%;
-    }
-
-    body {
-        /* background-color: crimson; */
-
-    }
-
+    
     .container {
         display: grid;
         grid-template-rows: .25fr 1fr .25fr 2fr 1fr 1fr .25fr .25fr;
@@ -279,10 +247,6 @@ figure {
             "contactMe contactMe contactMe"
             "phone email gitHub"
         ;
-
-
-
-
     }
 
     .aboutMeTitle,
@@ -308,6 +272,7 @@ figure {
     h1 {
         font-size: 32px;
         display: block;
+        margin: 0;
     }
 
     .slogan {
@@ -318,10 +283,15 @@ figure {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        
     }
 
     ul {
         margin: 5px 0px 2px;
 
+    }
+
+    ul li{
+        margin: 0 5px;
     }
 }
