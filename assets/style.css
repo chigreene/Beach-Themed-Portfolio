@@ -1,7 +1,7 @@
-/* #max {
+#max {
     max-width: 1300px;
     margin: 0 auto;
-} */
+}
 
 body {
     background-color: lightgoldenrodyellow;
@@ -78,7 +78,7 @@ figure {
     display: inline;
     position: relative;
     top: 20px;
-    left: 60%;
+
     font-weight: 900;
     padding: 5px 5px 5px 10px;
 
@@ -90,6 +90,7 @@ figure {
     display: flex;
     border: 4px solid lightblue;
     position: relative;
+
 }
 
 .card {
@@ -239,18 +240,58 @@ figure {
 
 
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
     body{
         background-color: lightgreen;
     }
-}
+} */
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
+    .max{
+        width: 100%;
+    }
     body{
-        background-color: crimson;
+        /* background-color: crimson; */
         
     }
+    .container{
+        display: grid;
+        grid-template-rows: .25fr 1fr .25fr 1fr 1fr 1fr .25fr .25fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "aboutMeTitle aboutMeTitle aboutMeTitle"
+            "aboutMe aboutMe aboutMe"
+            "work work work"
+            "cheatSheet cheatSheet cheatSheet"
+            "data data data"
+            "preWork preWork preWork"
+            "contactMe contactMe contactMe"
+            "phone email gitHub"
+            ;
+        .aboutMeTitle,
+        .work,
+        .contactMe {
+            text-align: left;
+            border: none;
+            border-bottom: 4px dashed lightsalmon;
+            padding-right: 5px;
+        }
+        
+    }
+    .portrait {
+        display: inline-block;
+        margin: 0px;
+        border-radius: 100%;
+    
+        position: relative;
+        top: 20px;
+        left: 10%;
+    
+    }
 
-
+    /* add transition */
+    .slogan{
+        left: 10%
+    }
 }
 
