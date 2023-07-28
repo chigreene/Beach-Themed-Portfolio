@@ -1,11 +1,15 @@
+/* #max {
+    max-width: 1300px;
+    margin: 0 auto;
+} */
 
-body{
+body {
     background-color: lightgoldenrodyellow;
     font-weight: bold;
 }
 
 /* styling for the header */
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,37 +19,37 @@ header{
     position: static;
 }
 
-h1{
+h1 {
     border-bottom: 4px solid lightsalmon;
 }
 
-ul{
+ul {
     display: flex;
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
 
 }
 
 
 
-ul li{
-    
+ul li {
+
     list-style-type: none;
     margin-right: 10px;
     border-bottom: 2px solid lightsalmon;
-    
+
 }
 
 
-figure{
+figure {
     display: flex;
     flex-direction: column;
 }
 
-.plain{
+.plain {
     text-decoration: none;
 }
 
-.beach{
+.beach {
     background-image: url(./portfolio-image.png);
     width: 100%;
     height: 200px;
@@ -53,19 +57,21 @@ figure{
     background-position: center;
     margin: 0 auto;
     z-index: 1;
-    
+
 }
-.portrait{
+
+.portrait {
     display: inline;
     margin: 0px;
     border-radius: 100%;
-    
+
     position: relative;
     top: 20px;
     left: 75%;
-    
+
 }
-.slogan{
+
+.slogan {
     background-color: white;
     margin: 0px;
     opacity: .8;
@@ -75,23 +81,23 @@ figure{
     left: 60%;
     font-weight: 900;
     padding: 5px 5px 5px 10px;
-    
+
 }
 
 /* styling for the boxes in the grid */
 
-.contentCard{
+.contentCard {
     display: flex;
     border: 4px solid lightblue;
     position: relative;
 }
 
-.card{
+.card {
     border-bottom: 4px solid lightsalmon;
 }
 
 /* salmon squares for work title */
-.cardTitle{
+.cardTitle {
     display: flex;
     align-items: center;
     position: absolute;
@@ -104,102 +110,147 @@ figure{
 
 
 /* cheatSheet card styling */
-.cheatSheet{
+.cheatSheet {
     background-image: url(./vecteezy_traditional-japanese-wave-pattern-vector-abstract-hand_18861519.jpg);
     background-size: cover;
     background-position: center;
-    
+
 }
 
-#cheatSheet{
+#cheatSheet {
     height: 100%;
     width: 100%;
-    
+
     z-index: 2;
-    
-    
+
+
 }
 
 /* data card styling */
-.data{
+.data {
     background-image: url(./beach-01.jpg);
     background-size: cover;
     background-position: center;
-    
+
 }
 
-#data{
+#data {
     height: 100%;
     width: 100%;
-    
+
     z-index: 2;
-    
-    
+
+
 }
+
 /* pre-work card styling */
-.preWork{
+.preWork {
     background-image: url(./vecteezy_campaign-sketch-doodle-set-backdrop-drawing-pattern-texture_.jpg);
 }
 
-.aboutMeTitle, .work, .contactMe {
+.aboutMeTitle,
+.work,
+.contactMe {
     text-align: right;
     border: none;
     border-right: 4px solid lightsalmon;
-    padding-right: 5px; 
+    padding-right: 5px;
 }
+
 /* added some hover effects were an opaque film greys out work tiles till hovered over */
 
 
 /* formate for the grid */
 
-.aboutMeTitle{
+.aboutMeTitle {
     grid-area: aboutMeTitle;
 }
-.aboutMe{
+
+.aboutMe {
     grid-area: aboutMe;
 
 }
-.work{
+
+.work {
     grid-area: work;
 }
-.cheatSheet{
+
+.cheatSheet {
     grid-area: cheatSheet;
-    
+
 }
-.data{
+
+.data {
     grid-area: data;
-    
+
 }
-.preWork{
+
+.preWork {
     grid-area: preWork;
-  
+
 }
 
 
-.gitHub{
+.gitHub {
     grid-area: gitHub;
 }
-.phone{
+
+.phone {
     grid-area: phone;
 }
-.email{
+
+.email {
     grid-area: email;
 }
-.contactMe{
+
+.contactMe {
     grid-area: contactMe;
 }
 
-.container{
+.container {
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 2fr;
     grid-template-rows: 1fr 1fr 1fr 2fr .25fr;
-    grid-template-areas: 
+    grid-template-areas:
         "aboutMeTitle aboutMe aboutMe aboutMe"
         "work cheatSheet cheatSheet cheatSheet"
         "work cheatSheet cheatSheet cheatSheet"
         "work preWork data data"
         "contactMe phone email gitHub";
-        gap: 20px 20px; 
+    gap: 20px 20px;
+}
+
+/* @media screen and (max-width: 800px) {
+    .cardTitle {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: absolute;
+        height: 70px;
+        width: 60px;
+        z-index: 1;
+        font-size: 8px;
+        background-color: lightsalmon;
+        bottom: 0;
+    }
+
+} */
+
+
+
+@media screen and (max-width: 992px) {
+    body{
+        background-color: lightgreen;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    body{
+        background-color: crimson;
+        
+    }
+
+
 }
 
