@@ -1,11 +1,19 @@
-/* #max {
-    max-width: 100%;
+:root{
+    --sand: lightgoldenrodyellow;
+    --water: lightblue;
+    --sun: lightsalmon;
+}
+
+#max {
+    padding: 2px;
+    /* max-width: 100%;
     max-height: 100%;
-    margin: 0 auto;
-} */
+    margin: 0 auto; */
+    min-width: 240px;
+}
 
 body {
-    background-color: lightgoldenrodyellow;
+    background-color: var(--sand);
     font-weight: bold;
 }
 
@@ -14,8 +22,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    background-color: lightblue;
+    padding-top: 20px;
+    background-color: var(--water);
     align-items: end;
     /* margin: 0px auto; */
     position: static;
@@ -24,8 +32,9 @@ header {
 }
 
 h1 {
-    border-bottom: 4px solid lightsalmon;
-    font-size: 32px;
+    border-bottom: 8px solid var(--sun);
+    font-size: 48px;
+    padding: 10px 0px 10px 10px;
     margin-bottom: 2px;
     margin-left: 5px
 }
@@ -40,10 +49,10 @@ ul {
 
 
 ul li {
-
+    font-size: 24px;
     list-style-type: none;
     margin-right: 10px;
-    border-bottom: 2px solid lightsalmon;
+    border-bottom: 2px solid var(--sun);
 
 }
 
@@ -85,13 +94,14 @@ a {
 }
 
 .slogan {
-    background-color: white;
+    background: linear-gradient(.25turn, white 10%, transparent 60%);
+    /* background-color: white; */
     margin: 0px;
     opacity: .8;
     display: inline;
     position: relative;
     top: 20px;
-
+    font-size: 24px;
     font-weight: 900;
     padding: 5px 5px 5px 10px;
 
@@ -101,15 +111,13 @@ a {
 
 .contentCard {
     display: flex;
-    border: 4px solid lightblue;
+    border: 4px solid var(--water);
     position: relative;
     transition: ease all .5s;
 }
 
-
-
 .card {
-    border-bottom: 4px solid lightsalmon;
+    border-bottom: 4px solid var(--sun);
 }
 
 /* salmon squares for work title */
@@ -118,13 +126,29 @@ a {
     align-items: center;
     position: absolute;
     height: 140px;
-    width: 100px;
+    width: 125px;
     z-index: 1;
-    background-color: lightsalmon;
+    background-color: var(--sun);
     bottom: 0;
+    font-size: 24px;
+    padding: 0 10px 0 5px;
+    border-top-right-radius: 20px;
 
 }
+/* modifying styling and spacing of the about me page */
+.aboutMe{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    line-height: 1.2;
+    padding: 10px;
+    font-size: 20px;
+}
 
+.aboutMe h3{
+    font-size: 24px;
+    margin: 10px;
+}
 
 /* cheatSheet card styling */
 .cheatSheet {
@@ -146,27 +170,41 @@ a {
 .preWork {
     background-image: url(./vecteezy_campaign-sketch-doodle-set-backdrop-drawing-pattern-texture_.jpg);
 }
-
+/* ensures anchor is full size of container and on top */
 #label {
     height: 100%;
     width: 100%;
     z-index: 2;
 }
 
+/* causing hover effects for nav bar */
+ul li:hover {
+    font-size: 32px;
+    border-bottom: 24px solid var(--sun);
+    transition-duration: 1.5s;
+
+}
+
+/* formatting headers of the sections */
 .aboutMeTitle,
 .work,
 .contactMe {
     text-align: right;
     border: none;
-    border-right: 4px solid lightsalmon;
+    border-right: 4px solid var(--sun);
     padding-right: 5px;
+    font-size: 32px;
+}
+
+/* formatting the contact section */
+.gitHub, .phone, .email{
     font-size: 24px;
 }
 
 /* animations - added some hover effects were an opaque film greys out work tiles till hovered over */
 .contentCard:hover {
     .cardTitle {
-        transition-duration: 500ms;
+        transition-duration: 1s;
         height: 280px;
     }
 }
@@ -223,7 +261,8 @@ a {
     height: 75vh;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 2fr;
+    /* width: 100%; */
+    grid-template-columns: 1fr 1fr 1fr 2fr;
     grid-template-rows: 1fr 1fr 1fr 2fr .25fr;
     grid-template-areas:
         "aboutMeTitle aboutMe aboutMe aboutMe"
@@ -242,7 +281,7 @@ a {
 
     .container {
         display: grid;
-        grid-template-rows: .25fr 1fr .25fr 200px 100px 100px .25fr .25fr;
+        grid-template-rows: .25fr 1fr .25fr 220px 120px 120px .25fr .25fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
             "aboutMeTitle aboutMeTitle aboutMeTitle"
@@ -261,7 +300,7 @@ a {
     .contactMe {
         text-align: left;
         border: none;
-        border-bottom: 4px dashed lightsalmon;
+        border-bottom: 4px dashed var(--sun);
         padding-right: 5px;
     }
 
@@ -282,14 +321,17 @@ a {
 
     .contentCard:hover {
         .cardTitle {
-            transition-duration: 500ms;
+            transition-duration: 1s;
             height: 100px;
         }
     }
 
     .slogan {
+        background: linear-gradient(.25turn, white 20%, transparent 70%);
         display: block;
     }
+
+
 
     h1 {
         font-size: 32px;
