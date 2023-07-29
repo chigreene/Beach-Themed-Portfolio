@@ -94,6 +94,7 @@ a {
     position: relative;
     top: 20px;
     left: 75%;
+    box-shadow: 0 0 10px lightseagreen;
 
 }
 
@@ -108,7 +109,7 @@ a {
     font-size: 24px;
     font-weight: 900;
     padding: 5px 5px 5px 10px;
-
+    
 }
 
 /* styling for the boxes in the grid */
@@ -197,9 +198,20 @@ a {
 .contactMe {
     text-align: right;
     border: none;
-    border-right: 4px solid var(--sun);
+    border-right: 4px dashed var(--sun);
     padding-right: 5px;
     font-size: 32px;
+    
+}
+
+.aboutMeTitle>p, .work>p,
+.contactMe>p {
+    display: inline;
+    
+    border-radius: 5px;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(lightseagreen, transparent) 39;
+    /* box-shadow: 0 3px 4px lightseagreen; */
 }
 
 /* formatting the contact section */
@@ -344,6 +356,11 @@ a {
     }
 
 
+    /* disabling the seagreen boarder to prevent overlaps */
+    .aboutMeTitle>p, .work>p,
+    .contactMe>p {
+        border: none;
+    }
 
     h1 {
         font-size: 32px;
