@@ -1,3 +1,5 @@
+
+
 :root{
     --sand: lightgoldenrodyellow;
     --water: lightblue;
@@ -41,8 +43,9 @@ h1 {
 
 ul {
     display: flex;
+    align-items: start;
     margin-bottom: 10px;
-
+    
 
 }
 
@@ -53,7 +56,8 @@ ul li {
     list-style-type: none;
     margin-right: 10px;
     border-bottom: 2px solid var(--sun);
-
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px lightseagreen;
 }
 
 
@@ -125,14 +129,15 @@ a {
     display: flex;
     align-items: center;
     position: absolute;
-    height: 140px;
-    width: 125px;
+    height: 100px;
+    width: 110px;
     z-index: 1;
     background-color: var(--sun);
     bottom: 0;
     font-size: 24px;
     padding: 0 10px 0 5px;
     border-top-right-radius: 20px;
+    /* box-shadow: 10px -10px 5px lightseagreen; */
 
 }
 /* modifying styling and spacing of the about me page */
@@ -178,11 +183,12 @@ a {
 }
 
 /* causing hover effects for nav bar */
-ul li:hover {
+.plain:hover {
     font-size: 32px;
-    border-bottom: 24px solid var(--sun);
+    border: 8px solid var(--sun);
     transition-duration: 1.5s;
-
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px lightseagreen;
 }
 
 /* formatting headers of the sections */
@@ -203,9 +209,11 @@ ul li:hover {
 
 /* animations - added some hover effects were an opaque film greys out work tiles till hovered over */
 .contentCard:hover {
+    box-shadow: 0 0 10px lightseagreen;
     .cardTitle {
         transition-duration: 1s;
-        height: 280px;
+        height: 220px;
+        box-shadow: 10px -10px 20px lightseagreen;
     }
 }
 
@@ -262,7 +270,7 @@ ul li:hover {
     margin-top: 20px;
     display: grid;
     /* width: 100%; */
-    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 2fr .25fr;
     grid-template-areas:
         "aboutMeTitle aboutMe aboutMe aboutMe"
@@ -277,8 +285,12 @@ ul li:hover {
 /* @media screen and (max width) {
     
 } */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 998px) {
+    
+}
 
+@media screen and (max-width: 768px) {
+  
     .container {
         display: grid;
         grid-template-rows: .25fr 1fr .25fr 220px 120px 120px .25fr .25fr;
@@ -355,3 +367,4 @@ ul li:hover {
         margin: 0 5px;
     }
 }
+
