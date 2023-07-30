@@ -219,7 +219,7 @@ a {
     font-size: 24px;
 }
 
-/* animations - added some hover effects were an opaque film greys out work tiles till hovered over */
+/* animations - added some hover effects where an opaque film greys out work tiles till hovered over and name card expands*/
 .contentCard:hover {
     box-shadow: 0 0 10px lightseagreen;
     .cardTitle {
@@ -229,9 +229,13 @@ a {
     }
 }
 
-.contentCard:hover {
-    opacity: .7;
-    transition-duration: 1000ms;
+section>a:hover {
+    
+    
+    background-image: linear-gradient(to right, rgba(211,211,211, 0), rgba(211,211,211, .8));
+    transition-duration: 5000ms;
+    z-index: 5;
+    
 }
 
 /* formate for the grid */
@@ -283,11 +287,11 @@ a {
     display: grid;
     /* width: 100%; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 2fr .25fr;
+    grid-template-rows: 1fr minmax(240px,2fr) minmax(240px,1.5fr) .25fr;
     grid-template-areas:
         "aboutMeTitle aboutMe aboutMe aboutMe"
         "work cheatSheet cheatSheet cheatSheet"
-        "work cheatSheet cheatSheet cheatSheet"
+        
         "work preWork data data"
         "contactMe phone email gitHub";
     gap: 20px 20px;
@@ -302,7 +306,29 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  
+    
+    h1 {
+        font-size: 32px;
+        display: block;
+        margin: 0;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    ul {
+        margin: 5px 0px 2px;
+
+    }
+
+    ul li {
+        margin: 10px 5px;
+    }
+
     .container {
         display: grid;
         grid-template-rows: .25fr 1fr .25fr 220px 120px 120px .25fr .25fr;
@@ -318,7 +344,7 @@ a {
             "phone email gitHub"
         ;
     }
-
+    
     .aboutMeTitle,
     .work,
     .contactMe {
@@ -362,26 +388,6 @@ a {
         border: none;
     }
 
-    h1 {
-        font-size: 32px;
-        display: block;
-        margin: 0;
-    }
-
-    header {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-    }
-
-    ul {
-        margin: 5px 0px 2px;
-
-    }
-
-    ul li {
-        margin: 0 5px;
-    }
+    
 }
 
