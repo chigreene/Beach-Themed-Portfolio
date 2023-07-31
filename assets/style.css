@@ -1,6 +1,4 @@
-
-
-:root{
+:root {
     --sand: lightgoldenrodyellow;
     --water: lightblue;
     --sun: lightsalmon;
@@ -8,10 +6,11 @@
 
 #max {
     padding: 2px;
-    /* max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto; */
+    max-height: 100vw;
+    margin: 0 auto;
     min-width: 240px;
+    padding-bottom: 20px;
+
 }
 
 body {
@@ -27,10 +26,10 @@ header {
     padding-top: 20px;
     background-color: var(--water);
     align-items: end;
-    /* margin: 0px auto; */
-    position: static;
-
-
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 6;
 }
 
 h1 {
@@ -45,11 +44,7 @@ ul {
     display: flex;
     align-items: start;
     margin-bottom: 10px;
-    
-
 }
-
-
 
 ul li {
     font-size: 24px;
@@ -57,7 +52,7 @@ ul li {
     margin-right: 10px;
     border-bottom: 2px solid var(--sun);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px lightseagreen;
+    box-shadow: 0px 0px 10px var(--water);
 }
 
 
@@ -90,17 +85,15 @@ a {
     display: inline;
     margin: 0px;
     border-radius: 100%;
-
     position: relative;
     top: 20px;
     left: 75%;
-    box-shadow: 0 0 10px lightseagreen;
+    box-shadow: 0 0 10px var(--water);
 
 }
 
 .slogan {
     background: linear-gradient(.25turn, white 10%, transparent 60%);
-    /* background-color: white; */
     margin: 0px;
     opacity: .8;
     display: inline;
@@ -109,7 +102,7 @@ a {
     font-size: 24px;
     font-weight: 900;
     padding: 5px 5px 5px 10px;
-    
+
 }
 
 /* styling for the boxes in the grid */
@@ -141,8 +134,9 @@ a {
     /* box-shadow: 10px -10px 5px lightseagreen; */
 
 }
+
 /* modifying styling and spacing of the about me page */
-.aboutMe{
+.aboutMe {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -151,7 +145,7 @@ a {
     font-size: 20px;
 }
 
-.aboutMe h3{
+.aboutMe h3 {
     font-size: 24px;
     margin: 10px;
 }
@@ -176,11 +170,54 @@ a {
 .preWork {
     background-image: url(./vecteezy_campaign-sketch-doodle-set-backdrop-drawing-pattern-texture_.jpg);
 }
+
 /* ensures anchor is full size of container and on top */
 #label {
     height: 100%;
     width: 100%;
     z-index: 2;
+}
+
+
+
+/* formatting headers of the sections */
+.aboutMeTitle,
+.work,
+.contactMe {
+    text-align: right;
+    border: none;
+    border-right: 4px dashed var(--sun);
+    padding-right: 5px;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.aboutMeTitle>p,
+.work>p,
+.contactMe>p {
+    display: inline;
+
+    border-radius: 5px;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(lightseagreen, transparent) 39;
+}
+
+/* formatting the contact section */
+.gitHub,
+.phone,
+.email {
+    font-size: 24px;
+}
+
+/* animations - added some hover effects where an opaque film greys out work tiles till hovered over and name card expands*/
+.contentCard:hover {
+    box-shadow: 0 0 10px lightseagreen;
+
+    .cardTitle {
+        transition-duration: 1s;
+        height: 220px;
+        box-shadow: 10px -10px 20px lightseagreen;
+    }
 }
 
 /* causing hover effects for nav bar */
@@ -192,50 +229,13 @@ a {
     box-shadow: 0px 0px 20px lightseagreen;
 }
 
-/* formatting headers of the sections */
-.aboutMeTitle,
-.work,
-.contactMe {
-    text-align: right;
-    border: none;
-    border-right: 4px dashed var(--sun);
-    padding-right: 5px;
-    font-size: 32px;
-    
-}
-
-.aboutMeTitle>p, .work>p,
-.contactMe>p {
-    display: inline;
-    
-    border-radius: 5px;
-    border-bottom: 10px solid;
-    border-image: linear-gradient(lightseagreen, transparent) 39;
-    /* box-shadow: 0 3px 4px lightseagreen; */
-}
-
-/* formatting the contact section */
-.gitHub, .phone, .email{
-    font-size: 24px;
-}
-
-/* animations - added some hover effects where an opaque film greys out work tiles till hovered over and name card expands*/
-.contentCard:hover {
-    box-shadow: 0 0 10px lightseagreen;
-    .cardTitle {
-        transition-duration: 1s;
-        height: 220px;
-        box-shadow: 10px -10px 20px lightseagreen;
-    }
-}
-
 section>a:hover {
-    
-    
-    background-image: linear-gradient(to right, rgba(211,211,211, 0), rgba(211,211,211, .8));
+
+
+    background-image: linear-gradient(to right, rgba(211, 211, 211, 0), rgba(211, 211, 211, .8));
     transition-duration: 5000ms;
     z-index: 5;
-    
+
 }
 
 /* formate for the grid */
@@ -285,13 +285,11 @@ section>a:hover {
     height: 75vh;
     margin-top: 20px;
     display: grid;
-    /* width: 100%; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr minmax(240px,2fr) minmax(240px,1.5fr) .25fr;
+    grid-template-rows: 1fr minmax(240px, 2fr) minmax(240px, 1.5fr) .25fr;
     grid-template-areas:
         "aboutMeTitle aboutMe aboutMe aboutMe"
         "work cheatSheet cheatSheet cheatSheet"
-        
         "work preWork data data"
         "contactMe phone email gitHub";
     gap: 20px 20px;
@@ -301,16 +299,40 @@ section>a:hover {
 /* @media screen and (max width) {
     
 } */
-@media screen and (min-width: 998px) {
-    
-}
+@media screen and (max-width: 998px) {
 
-@media screen and (max-width: 768px) {
-    
     h1 {
         font-size: 32px;
         display: block;
         margin: 0;
+
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    ul {
+        margin: 5px 0px 2px;
+
+    }
+
+    ul li {
+        margin: 10px 5px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    h1 {
+        font-size: 32px;
+        display: block;
+        margin: 0;
+
     }
 
     header {
@@ -344,7 +366,7 @@ section>a:hover {
             "phone email gitHub"
         ;
     }
-    
+
     .aboutMeTitle,
     .work,
     .contactMe {
@@ -383,11 +405,11 @@ section>a:hover {
 
 
     /* disabling the seagreen boarder to prevent overlaps */
-    .aboutMeTitle>p, .work>p,
+    .aboutMeTitle>p,
+    .work>p,
     .contactMe>p {
         border: none;
     }
 
-    
-}
 
+}
