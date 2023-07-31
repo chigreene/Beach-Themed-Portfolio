@@ -10,6 +10,22 @@ My website is a portfolio of my current and past projects. It serves a online re
 
 -To complete this project i needed to learn the basics of grids and how to use divs as a link to a web page. I also learned how fun CSS is when designing a webpage.
 
+## Usage
+
+This project is used to access all the deployed projects I have worked. These are intended to be used by an employer to see my capabilities and to show case my creativity and coding abilities. 
+
+Here is a link to the webpage.
+
+https://chigreene.github.io/Lazy-Beach-Day/
+
+'''md
+![A mobile screenshot of my deployed portfolio](./assets/Screenshot%20portfolio%202.png)
+'''
+
+'''md
+![A desktop screenshot of my deployed portfolio](./assets/Screenshot%20of%20portfolio%201.png)
+'''
+
 ##Credits
-Ross K
+Ross K,
 Meg Meyers

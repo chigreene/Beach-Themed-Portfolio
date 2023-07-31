@@ -285,7 +285,7 @@ section>a:hover {
     height: 75vh;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: .5fr 1fr 1fr 1fr;
     grid-template-rows: 1fr minmax(240px, 2fr) minmax(240px, 1.5fr) .25fr;
     grid-template-areas:
         "aboutMeTitle aboutMe aboutMe aboutMe"
