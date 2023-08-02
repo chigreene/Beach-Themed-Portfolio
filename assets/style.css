@@ -289,7 +289,6 @@ section>a:hover {
 .fullPage {
     /* height: 75vh; */
     /* min-width: 240px; */
-    margin-top: 20px;
     display: grid;
     grid-template-columns: .5fr 1fr 1fr 1fr;
     grid-template-rows: minmax(100px, 1fr) 1fr minmax(240px, 2fr) minmax(240px, 1.5fr) .25fr;
