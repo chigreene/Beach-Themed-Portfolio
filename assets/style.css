@@ -4,14 +4,14 @@
     --sun: lightsalmon;
 }
 
-#max {
+/* #max {
     padding: 2px;
     max-height: 100vw;
     margin: 0 auto;
     min-width: 240px;
     padding-bottom: 20px;
 
-}
+} */
 
 body {
     background-color: var(--sand);
@@ -241,6 +241,10 @@ section>a:hover {
 
 /* formate for the grid */
 
+.header {
+    grid-area: header;
+}
+
 .aboutMeTitle {
     grid-area: aboutMeTitle;
 }
@@ -282,13 +286,15 @@ section>a:hover {
     grid-area: contactMe;
 }
 
-.container {
-    height: 75vh;
+.fullPage {
+    /* height: 75vh; */
+    /* min-width: 240px; */
     margin-top: 20px;
     display: grid;
     grid-template-columns: .5fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr minmax(240px, 2fr) minmax(240px, 1.5fr) .25fr;
+    grid-template-rows: minmax(100px, 1fr) 1fr minmax(240px, 2fr) minmax(240px, 1.5fr) .25fr;
     grid-template-areas:
+        "header header header header"
         "aboutMeTitle aboutMe aboutMe aboutMe"
         "work cheatSheet cheatSheet cheatSheet"
         "work preWork data data"
@@ -298,7 +304,7 @@ section>a:hover {
 }
 
 /* @media screen and (max width) {
-    
+/*     
 } */
 @media screen and (max-width: 998px) {
 
@@ -306,6 +312,7 @@ section>a:hover {
         font-size: 32px;
         display: block;
         margin: 0;
+        
 
     }
 
@@ -352,11 +359,15 @@ section>a:hover {
         margin: 10px 5px;
     }
 
-    .container {
+   
+    
+
+    .fullPage {
         display: grid;
-        grid-template-rows: .25fr 1fr .25fr 220px 120px 120px .25fr .25fr;
+        grid-template-rows: 200px .25fr 1fr .25fr 220px 120px 120px .25fr .25fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
+            "header header header"
             "aboutMeTitle aboutMeTitle aboutMeTitle"
             "aboutMe aboutMe aboutMe"
             "work work work"
@@ -405,7 +416,7 @@ section>a:hover {
     }
 
 
-    /* disabling the seagreen boarder to prevent overlaps */
+ /* disabling the seagreen boarder to prevent overlaps  */
     .aboutMeTitle>p,
     .work>p,
     .contactMe>p {
@@ -413,4 +424,4 @@ section>a:hover {
     }
 
 
-}
+}  
